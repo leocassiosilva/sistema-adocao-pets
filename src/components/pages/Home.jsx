@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import api from '../../utils/api'
 import { motion } from "motion/react"
+import { Link } from 'react-router-dom'
 
 
 function Home(){
@@ -42,6 +43,16 @@ function Home(){
                     <h2 className="text-2xl text-gray-700 font-bold mb-2">{pet.name}</h2>
                     <p className="text-gray-700 mb-1"><strong>Idade:</strong> {pet.age} anos</p>
                     <p className="text-gray-700 mb-1"><strong>Peso:</strong> {pet.weight} kg</p>
+                    {pet.available ? (
+                      <Link
+                        to={`/pet/${pet._id}`}
+                        className="inline-block mt-4 px-4 py-2 bg-yellow-300 text-white rounded hover:bg-yellow-400 transition"
+                      >
+                        Mais detalhes
+                      </Link>
+                    ) : (
+                      <p className="text-red-500 font-bold mt-4">Adotado!</p>
+                    )}
                   </div>
                   </motion.div>
                 ))}
