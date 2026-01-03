@@ -5,6 +5,7 @@ import Container from './components/layout/Container'
 
 /*Page*/
 import Home from './components/pages/Home' 
+import PetDetails from './components/pages/Pet/PetDetails'
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
       <Container>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/pet/:id" element={<PetDetails />} />
+
         </Routes>
       </Container>
       <Footer />

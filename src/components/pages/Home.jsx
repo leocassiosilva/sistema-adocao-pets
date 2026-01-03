@@ -8,6 +8,8 @@ function Home(){
     const [pets, setPets] = useState([])
     
       useEffect(() => {
+        document.title = "Home - Get A Pet";
+
         api.get('/pets').then((response) => {
           setPets(response.data.pets)
           console.log(response.data.pets)
