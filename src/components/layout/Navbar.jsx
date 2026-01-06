@@ -17,8 +17,23 @@ function Navbar() {
                 </Link>
              
                 <ul className="flex gap-6 font-medium">
-                    <li className="cursor-pointer hover:text-white">Home</li>
-                    <li className="cursor-pointer hover:text-white">Cadastrar</li>
+                    <li>
+                        <Link
+                        to="/"
+                        className="cursor-pointer hover:text-white transition"
+                        >
+                        Home
+                        </Link>
+                    </li>
+
+                    <li>
+                        <Link
+                        to="/user/register"
+                        className="cursor-pointer hover:text-white transition"
+                        >
+                        Cadastre-se
+                        </Link>
+                    </li>
                 </ul>
             </div>
         </nav>
