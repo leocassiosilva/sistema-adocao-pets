@@ -52,19 +52,18 @@ function Register() {
             handleOnChange={handleOnChange}
           />
 
-          <Input
-            type="password"
+          <Input 
+            type="password" 
             text="Senha"
-            name="password"
-            placeholder="Digite sua senha"
+            name="password" 
+            placeholder="Digite sua senha" 
             handleOnChange={handleOnChange}
           />
-
-          <Input
-            type="password"
-            text="Confirme a Senha"
-            name="confirmPassword"
-            placeholder="Confirme sua senha"
+          <Input 
+            type="password" 
+            text="Confirmação de Senha"
+            name="confirmpassword" 
+            placeholder="Confirme a sua senha" 
             handleOnChange={handleOnChange}
           />
 

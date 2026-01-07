@@ -23,24 +23,31 @@ export default function useAuth() {
 
 
     async function register(user) {
-        let msgText = 'Cadastro realizado com sucesso!';
-        let msgType = 'success';
-        
-        try {
-            const data = await api.post('/users/register', user).then((response) => {
-                return response.data;
-            });
+        let msgText = 'Cadastro realizado com sucesso!'
+        let msgType = 'success'
 
-            await authUser(data);
+        try {
+            const response = await api.post('/users/register', user)
+            const data = response.data
+
+            await authUser(data)
 
         } catch (error) {
-            console.log(error);
-            msgText = error.response?.data?.message || 'Erro ao cadastrar';
-            msgType = 'error';
+            console.log(error)
+
+            const backendMessage = error.response?.data?.message
+
+            msgText =
+            typeof backendMessage === 'string'
+                ? backendMessage
+                : 'Erro interno do servidor'
+
+            msgType = 'error'
         }
 
-        setFlashMessage(msgText, msgType);
+        setFlashMessage(msgText, msgType)
     }
+
 
     async function authUser(data) {
         setAuthenticated(true);
