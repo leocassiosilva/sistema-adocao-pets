@@ -8,6 +8,7 @@ import Message from './components/layout/Message'
 import Home from './components/pages/Home' 
 import PetDetails from './components/pages/Pet/PetDetails'
 import Register from './components/pages/Auth/Register'
+import Login from './components/pages/Auth/Login'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/pet/:id" element={<PetDetails />} />
           <Route path="/user/register" element={<Register />} />
+          <Route path="/user/login" element={<Login />} />
         </Routes>
       </Container>
       <Footer />

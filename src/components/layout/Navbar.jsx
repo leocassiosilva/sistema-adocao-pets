@@ -1,8 +1,15 @@
 import logo from '../../assets/img/logo.png';
 import { motion } from "motion/react"
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+
+
+/* Context*/
+import {Context} from '../../context/UserContext'
+
 
 function Navbar() {
+    const {authenticated, logout } = useContext(Context)
     return (
         <nav className="bg-yellow-300 shadow-md fixed w-full top-0 z-50">
             <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
@@ -26,14 +33,36 @@ function Navbar() {
                         </Link>
                     </li>
 
-                    <li>
-                        <Link
-                        to="/user/register"
-                        className="cursor-pointer hover:text-white transition"
-                        >
-                        Cadastre-se
-                        </Link>
-                    </li>
+
+
+                    {authenticated ? (
+                    <>
+                        <li onClick={() => logout()}>
+                            Sair
+                        </li>
+                    </>
+                    ) : (
+                    <>
+                        <li>
+                            <Link
+                            to="/user/register"
+                            className="cursor-pointer hover:text-white transition"
+                            >
+                            Cadastre-se
+                            </Link>
+                        </li>
+
+                        <li>
+                            <Link
+                            to="/user/login"
+                            className="cursor-pointer hover:text-white transition"
+                            >
+                            Login
+                            </Link>
+                        </li>
+                    </>
+                    
+                    )}
                 </ul>
             </div>
         </nav>
