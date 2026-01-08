@@ -36,7 +36,14 @@ function Navbar() {
 
 
                     {authenticated ? (
-                    <>
+                    <>  
+
+                        <li>
+                            <Link to="/pet/add" className="cursor-pointer hover:text-white transition">
+                            Adicionar Pet
+                            </Link>
+                        </li>
+
                         <li onClick={() => logout()}>
                             Sair
                         </li>

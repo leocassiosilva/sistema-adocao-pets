@@ -17,9 +17,9 @@ function Home(){
       }, [])
 
     return (
-        <section class="p-10">
-           <div class="mb-8">
-              <h1 class="text-4xl font-bold">Adote um Pet</h1>
+        <section className="p-10">
+           <div className="mb-8">
+              <h1 className="text-4xl font-bold">Adote um Pet</h1>
               <p>Veja os detalhes de cada um e conheça o tutor deles</p>
            </div>
            

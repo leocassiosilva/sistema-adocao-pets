@@ -9,6 +9,8 @@ import Home from './components/pages/Home'
 import PetDetails from './components/pages/Pet/PetDetails'
 import Register from './components/pages/Auth/Register'
 import Login from './components/pages/Auth/Login'
+import AddPet from './components/pages/Pet/AddPet'
+
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
           <Route path="/pet/:id" element={<PetDetails />} />
           <Route path="/user/register" element={<Register />} />
           <Route path="/user/login" element={<Login />} />
+          <Route path="/pet/add" element={<AddPet />} />
         </Routes>
       </Container>
       <Footer />
