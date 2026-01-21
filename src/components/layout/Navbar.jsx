@@ -37,7 +37,11 @@ function Navbar() {
 
                     {authenticated ? (
                     <>  
-
+                        <li>
+                            <Link to="pet/mypets" className="cursor-pointer hover:text-white transition">
+                            Meus Pets
+                            </Link>
+                        </li>
                         <li>
                             <Link to="/pet/add" className="cursor-pointer hover:text-white transition">
                             Adicionar Pet
